@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "快手采集工作台",
+  "version": "0.1.0",
+  "identifier": "com.kuaishoucrawler.desktop",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://127.0.0.1:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "快手采集工作台",
+        "width": 1380,
+        "height": 920,
+        "minWidth": 980,
+        "minHeight": 700,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; connect-src ipc: http://ipc.localhost http://127.0.0.1:* ws://127.0.0.1:*; img-src 'self' asset: http://asset.localhost blob: data:; style-src 'self' 'unsafe-inline'; script-src 'self'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "resources": {
+      "../backend/engine": "backend/engine",
+      "../backend/desktop_helper.py": "backend/desktop_helper.py",
+      "../backend/tools/uv.exe": "backend/tools/uv.exe",
+      "../backend/tools/UV-LICENSE-APACHE.txt": "backend/tools/UV-LICENSE-APACHE.txt",
+      "../backend/tools/UV-LICENSE-MIT.txt": "backend/tools/UV-LICENSE-MIT.txt",
+      "../backend/tools/node.exe": "backend/tools/node.exe",
+      "../backend/tools/NODE-LICENSE.txt": "backend/tools/NODE-LICENSE.txt",
+      "../backend/UPSTREAM_NOTICE.md": "backend/UPSTREAM_NOTICE.md",
+      "../scripts/setup-backend.ps1": "scripts/setup-backend.ps1"
+    }
+  }
+}

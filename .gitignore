@@ -1,0 +1,16 @@
+node_modules/
+dist/
+src-tauri/target/
+src-tauri/bundle/
+*.log
+.env
+.env.*
+!.env.example
+backend/.runtime/
+backend/engine/.venv/
+backend/engine/data/
+backend/engine/browser_data/
+backend/engine/cache/
+backend/engine/__pycache__/
+backend/engine/**/*.pyc
+/backend/engine/config/base_config.py.bak
